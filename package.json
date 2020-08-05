@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "pusher": "^3.0.1",
     "pusher-js": "^7.0.0",
+    "raccoon": "^0.2.8",
     "socket.io": "^2.3.0"
   }
 }

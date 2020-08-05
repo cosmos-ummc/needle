@@ -7,6 +7,7 @@ import * as path from "path";
 import * as Pusher from "pusher";
 import * as bodyParser from "body-parser";
 import * as cors from "cors";
+import * as raccoon from "raccoon";
 
 export class Server {
   private httpServer: HTTPServer;
@@ -53,8 +54,33 @@ export class Server {
 
     this.app.post("/message", (req, res) => {
       const payload = req.body;
-      this.pusher.trigger("chat", "message", payload);
-      res.send(payload);
+      console.log(payload);
+      this.pusher.trigger(payload.roomId, "message", payload);
+      res.json(payload);
+    });
+
+    this.app.post("/like", (req, res) => {
+      const payload = req.body;
+      console.log(payload);
+      raccoon.liked(payload.userId, payload.term).then(
+        () => {
+          res.json(payload);
+        },
+        (error) => {
+          res.json({});
+        }
+      );
+    });
+
+    this.app.get("/similarusers", (req, res) => {
+      raccoon.mostSimilarUsers(req.query.id).then(
+        (results) => {
+          res.json(results);
+        },
+        (error) => {
+          res.json([]);
+        }
+      );
     });
   }
 
