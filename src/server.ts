@@ -4,7 +4,7 @@ import { Server as SocketIOServer } from "socket.io";
 import * as socketIO from "socket.io";
 import { createServer, Server as HTTPServer } from "http";
 import * as path from "path";
-import * as pusher from "pusher";
+import * as Pusher from "pusher";
 import * as bodyParser from "body-parser";
 import * as cors from "cors";
 
@@ -12,6 +12,7 @@ export class Server {
   private httpServer: HTTPServer;
   private app: Application;
   private io: SocketIOServer;
+  private pusher: Pusher;
 
   private activeSockets: string[] = [];
 
@@ -23,6 +24,13 @@ export class Server {
 
   private initialize(): void {
     this.app = express();
+    this.pusher = new Pusher({
+      appId: "1044913",
+      cluster: "ap1",
+      encrypted: true,
+      key: "ec07749c8ce28d32448a",
+      secret: "25382e1520d7be2efca8",
+    });
     this.httpServer = createServer(this.app);
     this.io = socketIO(this.httpServer);
 
@@ -32,12 +40,21 @@ export class Server {
   }
 
   private configureApp(): void {
+    this.app.use(cors());
+    this.app.use(bodyParser.urlencoded({ extended: false }));
+    this.app.use(bodyParser.json());
     this.app.use(express.static(path.join(__dirname, "../public")));
   }
 
   private configureRoutes(): void {
     this.app.get("/", (req, res) => {
       res.sendFile("index.html");
+    });
+
+    this.app.post("/message", (req, res) => {
+      const payload = req.body;
+      this.pusher.trigger("chat", "message", payload);
+      res.send(payload);
     });
   }
 

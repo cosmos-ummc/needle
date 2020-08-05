@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3eb00605-788b-4bcf-8b40-d91e232e4bc7" name="Default Changelist" comment="" />
+    <list default="true" id="3eb00605-788b-4bcf-8b40-d91e232e4bc7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +20,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1fWoQ6Ff0vAJfFY1bVeP5XMJXBm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,8 +33,9 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/frontend/mhpss" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\backend\hackathonbe\chatnode\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\backend\hackathonbe\chatnode\node_modules\typescript\lib" />
@@ -48,7 +57,7 @@
       <updated>1596343190810</updated>
       <workItem from="1596343192324" duration="6243000" />
       <workItem from="1596513450439" duration="680000" />
-      <workItem from="1596613907908" duration="1068000" />
+      <workItem from="1596613907908" duration="2340000" />
     </task>
     <servers />
   </component>
@@ -56,10 +65,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="117" key="FileChooserDialogImpl" timestamp="1596514129508">
+    <state x="191" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596616254034">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="421" y="117" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1596514129508" />
+    <state x="191" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1596616254034" />
+    <state x="765" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1596615363405">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="765" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1596615363405" />
+    <state x="421" y="117" key="FileChooserDialogImpl" timestamp="1596615601222">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="117" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1596615601222" />
     <state x="0" y="8" key="SettingsEditor" timestamp="1596614838123">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
