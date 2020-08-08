@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3eb00605-788b-4bcf-8b40-d91e232e4bc7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +56,7 @@
       <workItem from="1596343192324" duration="6243000" />
       <workItem from="1596513450439" duration="680000" />
       <workItem from="1596613907908" duration="2340000" />
+      <workItem from="1596899709598" duration="545000" />
     </task>
     <servers />
   </component>
@@ -74,10 +72,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="765" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1596615363405" />
-    <state x="421" y="117" key="FileChooserDialogImpl" timestamp="1596615601222">
+    <state x="421" y="117" key="FileChooserDialogImpl" timestamp="1596900021996">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="421" y="117" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1596615601222" />
+    <state x="421" y="117" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1596900021996" />
     <state x="0" y="8" key="SettingsEditor" timestamp="1596614838123">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
