@@ -5,7 +5,8 @@ const existingCalls = [];
 
 const {RTCPeerConnection, RTCSessionDescription} = window;
 
-const peerConnection = new RTCPeerConnection();
+var servers = { 'iceServers': [{ 'urls': 'stun:74.125.142.127:19302' }] };
+const peerConnection = new RTCPeerConnection(servers);
 
 function unselectUsersFromList() {
     const alreadySelectedUser = document.querySelectorAll(
