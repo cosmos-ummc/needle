@@ -59,6 +59,7 @@ export class Server {
       };
 
       this.httpsServer = https.createServer(credentials, this.app);
+      this.io = socketIO(this.httpsServer);
     } else {
       this.httpServer = createServer(this.app);
       this.io = socketIO(this.httpServer);
