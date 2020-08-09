@@ -5,7 +5,7 @@ const existingCalls = [];
 
 const {RTCPeerConnection, RTCSessionDescription} = window;
 
-var servers = { 'iceServers': [{ 'urls': 'stun:74.125.142.127:19302' }] };
+var servers = { 'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }] };
 const peerConnection = new RTCPeerConnection(servers);
 
 function unselectUsersFromList() {
