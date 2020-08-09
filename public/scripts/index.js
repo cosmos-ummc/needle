@@ -66,7 +66,7 @@ function updateUserList(socketIds) {
 const userEmail = prompt("Please enter your email");
 const userPassword = prompt("Please enter your password");
 
-const socket = io.connect("localhost:5000", {query: `email=${userEmail}&password=${userPassword}`});
+const socket = io.connect("https://chat.quaranteams.tk", {query: `email=${userEmail}&password=${userPassword}`});
 
 socket.on("update-user-list", ({users}) => {
     updateUserList(users);
