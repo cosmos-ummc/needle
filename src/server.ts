@@ -34,7 +34,7 @@ export class Server {
     });
 
     this.httpServer = createServer(this.app);
-    this.io = socketIO(this.httpServer);
+    this.io = socketIO(this.httpServer, { origins: '*:*'});
 
     this.configureApp();
     this.configureRoutes();
