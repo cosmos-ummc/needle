@@ -176,7 +176,7 @@ export class Server {
 
   public listenHttps(callback: (port: number) => void): void {
     this.httpsServer.listen(this.DEFAULT_PORT, () => {
-      callback(this.DEFAULT_HTTPS_PORT);
+      callback(this.DEFAULT_PORT);
     });
   }
 }
