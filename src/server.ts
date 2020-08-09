@@ -8,9 +8,12 @@ import * as Pusher from "pusher";
 import * as bodyParser from "body-parser";
 import * as cors from "cors";
 import * as raccoon from "raccoon";
+import * as https from "https";
+import * as fs from "fs";
 
 export class Server {
   private httpServer: HTTPServer;
+  private httpsServer: https.Server;
   private app: Application;
   private io: SocketIOServer;
   private pusher: Pusher;
@@ -18,6 +21,7 @@ export class Server {
   private activeSockets: string[] = [];
 
   private readonly DEFAULT_PORT = 5000;
+  private readonly DEFAULT_HTTPS_PORT = 443;
 
   constructor() {
     this.initialize();
@@ -32,8 +36,33 @@ export class Server {
       key: "ec07749c8ce28d32448a",
       secret: "25382e1520d7be2efca8",
     });
-    this.httpServer = createServer(this.app);
-    this.io = socketIO(this.httpServer);
+
+    if (process.env.ENABLE_HTTP !== "true") {
+      // Certificate
+      const privateKey = fs.readFileSync(
+        "/etc/letsencrypt/live/chat.quaranteams.tk/privkey.pem",
+        "utf8"
+      );
+      const certificate = fs.readFileSync(
+        "/etc/letsencrypt/live/chat.quaranteams.tk/cert.pem",
+        "utf8"
+      );
+      const ca = fs.readFileSync(
+        "/etc/letsencrypt/live/chat.quaranteams.tk/chain.pem",
+        "utf8"
+      );
+
+      const credentials = {
+        key: privateKey,
+        cert: certificate,
+        ca: ca,
+      };
+
+      this.httpsServer = https.createServer(credentials, this.app);
+    } else {
+      this.httpServer = createServer(this.app);
+      this.io = socketIO(this.httpServer);
+    }
 
     this.configureApp();
     this.configureRoutes();
@@ -141,6 +170,12 @@ export class Server {
   public listen(callback: (port: number) => void): void {
     this.httpServer.listen(this.DEFAULT_PORT, () => {
       callback(this.DEFAULT_PORT);
+    });
+  }
+
+  public listenHttps(callback: (port: number) => void): void {
+    this.httpsServer.listen(this.DEFAULT_PORT, () => {
+      callback(this.DEFAULT_HTTPS_PORT);
     });
   }
 }
