@@ -34,7 +34,20 @@ export class Server {
     });
 
     this.httpServer = createServer(this.app);
-    this.io = socketIO(this.httpServer, { origins: '*:*'});
+    this.io = socketIO(this.httpServer, {
+      handlePreflightRequest: (req, res) => {
+        const headers = {
+          "Access-Control-Allow-Headers": "Content-Type, Authorization",
+          // @ts-ignore
+          "Access-Control-Allow-Origin": req.headers.origin, //or the specific origin you want to give access to,
+          "Access-Control-Allow-Credentials": true
+        };
+        // @ts-ignore
+        res.writeHead(200, headers);
+        // @ts-ignore
+        res.end();
+      }
+    });
 
     this.configureApp();
     this.configureRoutes();
