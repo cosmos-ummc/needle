@@ -87,6 +87,7 @@ export class Server {
     });
 
     this.app.get("/similarusers", (req, res) => {
+      console.log(req.query);
       raccoon.mostSimilarUsers(req.query.id).then(
         (results) => {
           console.log(results);
