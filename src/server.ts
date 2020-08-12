@@ -66,11 +66,9 @@ export class Server {
       res.sendFile("index.html");
     });
 
-    this.app.post("/message", (req, res) => {
-      const payload = req.body;
-      console.log(payload);
-      this.pusher.trigger("general", "message", payload);
-      res.json(payload);
+    this.app.get("/message", (req, res) => {
+      this.pusher.trigger("general", "message", "new-message");
+      res.json({});
     });
 
     this.app.post("/like", (req, res) => {
