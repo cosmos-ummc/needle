@@ -69,7 +69,7 @@ export class Server {
     this.app.post("/message", (req, res) => {
       const payload = req.body;
       console.log(payload);
-      this.pusher.trigger(payload.roomId, "message", payload);
+      this.pusher.trigger("general", "message", payload);
       res.json(payload);
     });
 
