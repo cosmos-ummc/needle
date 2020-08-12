@@ -92,6 +92,7 @@ export class Server {
           res.json(results);
         },
         (error) => {
+          console.log(error);
           res.json([]);
         }
       );
