@@ -89,6 +89,7 @@ export class Server {
     this.app.get("/similarusers", (req, res) => {
       raccoon.mostSimilarUsers(req.query.id).then(
         (results) => {
+          console.log(results);
           res.json(results);
         },
         (error) => {
