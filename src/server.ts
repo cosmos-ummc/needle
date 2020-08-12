@@ -100,9 +100,6 @@ export class Server {
 
   private handleSocketConnection(): void {
     this.io.on("connection", (socket) => {
-      console.log(socket.handshake.query.email);
-      console.log(socket.handshake.query.password);
-
       const existingSocket = this.activeSockets.find(
         (existingSocket) => existingSocket === socket.id
       );

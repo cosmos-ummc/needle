@@ -5,8 +5,7 @@ const existingCalls = [];
 
 const {RTCPeerConnection, RTCSessionDescription} = window;
 
-var servers = { 'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }] };
-const peerConnection = new RTCPeerConnection(servers);
+const peerConnection = new RTCPeerConnection();
 
 function unselectUsersFromList() {
     const alreadySelectedUser = document.querySelectorAll(
@@ -19,6 +18,7 @@ function unselectUsersFromList() {
 }
 
 function createUserItemContainer(socketId) {
+
     const userContainerEl = document.createElement("div");
 
     const usernameEl = document.createElement("p");
@@ -26,7 +26,7 @@ function createUserItemContainer(socketId) {
     userContainerEl.setAttribute("class", "active-user");
     userContainerEl.setAttribute("id", socketId);
     usernameEl.setAttribute("class", "username");
-    usernameEl.innerHTML = `Socket: ${socketId}`;
+    usernameEl.innerHTML = "Enter Meeting";
 
     userContainerEl.appendChild(usernameEl);
 
@@ -64,10 +64,7 @@ function updateUserList(socketIds) {
     });
 }
 
-const userEmail = prompt("Please enter your email");
-const userPassword = prompt("Please enter your password");
-
-const socket = io.connect("https://chat.quaranteams.tk", {query: `email=${userEmail}&password=${userPassword}`});
+const socket = io.connect("https://chat.quaranteams.tk");
 
 socket.on("update-user-list", ({users}) => {
     updateUserList(users);
@@ -82,20 +79,6 @@ socket.on("remove-user", ({socketId}) => {
 });
 
 socket.on("call-made", async data => {
-    if (getCalled) {
-        const confirmed = confirm(
-            `User "Socket: ${data.socket}" wants to call you. Do accept this call?`
-        );
-
-        if (!confirmed) {
-            socket.emit("reject-call", {
-                from: data.socket
-            });
-
-            return;
-        }
-    }
-
     await peerConnection.setRemoteDescription(
         new RTCSessionDescription(data.offer)
     );
