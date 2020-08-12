@@ -76,7 +76,7 @@ export class Server {
     this.app.post("/like", (req, res) => {
       const payload = req.body;
       console.log(payload);
-      raccoon.liked(payload.userId, payload.term).then(
+      raccoon.liked(payload.patientId, payload.term).then(
         () => {
           res.json(payload);
         },
