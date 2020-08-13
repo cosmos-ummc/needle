@@ -72,7 +72,11 @@ export class Server {
     });
 
     this.app.get("/chatroom", (req, res) => {
-      this.pusher.trigger("general", "chatroom", req.query.id + "," + req.query.id2);
+      this.pusher.trigger(
+        "general",
+        "chatroom",
+        req.query.id + "," + req.query.id2
+      );
       res.json({});
     });
 
@@ -97,6 +101,21 @@ export class Server {
     this.app.get("/similarusers", (req, res) => {
       console.log(req.query);
       raccoon.mostSimilarUsers(req.query.id).then(
+        (results) => {
+          console.log(results);
+          res.json(results);
+        },
+        (error) => {
+          console.log(error);
+          res.json([]);
+        }
+      );
+    });
+
+    this.app.get("/personality", (req, res) => {
+      console.log(req.query);
+
+      raccoon.allLikedFor(req.query.id).then(
         (results) => {
           console.log(results);
           res.json(results);
