@@ -71,6 +71,16 @@ export class Server {
       res.json({});
     });
 
+    this.app.get("/chatroom", (req, res) => {
+      this.pusher.trigger("general", "chatroom", req.query.id + "," + req.query.id2);
+      res.json({});
+    });
+
+    this.app.get("/block", (req, res) => {
+      this.pusher.trigger("general", "block", "someone-block");
+      res.json({});
+    });
+
     this.app.post("/like", (req, res) => {
       const payload = req.body;
       console.log(payload);
