@@ -18,15 +18,15 @@
 
 [Link to the IES-R Original Question Sets](https://www.aerztenetz-grafschaft.de/download/IES-R-englisch-5-stufig.pdf)
 
-[Link to the Backend Main Service](https://github.com/cosmos-ummc/comet)
+[Link to the Backend Main Service GitHub Repo](https://github.com/cosmos-ummc/comet)
 
-[Link to the Client Website](https://github.com/cosmos-ummc/mayall)
+[Link to the Client Website GitHub Repo](https://github.com/cosmos-ummc/mayall)
 
-[Link to the Admin Dashboard](https://github.com/cosmos-ummc/butterfly)
+[Link to the Admin Dashboard GitHub Repo](https://github.com/cosmos-ummc/butterfly)
 
-[Link to the Backend Chat Service](https://github.com/cosmos-ummc/needle)
+[Link to the Backend Chat Service GitHub Repo](https://github.com/cosmos-ummc/needle)
 
-[Link to the Telegram Chat Bot](https://github.com/cosmos-ummc/Willman)
+[Link to the Telegram Chat Bot GitHub Repo](https://github.com/cosmos-ummc/Willman)
 
 # Instructions
 
