@@ -6,8 +6,6 @@
 
 [Link to the user manual](https://docs.google.com/document/d/1yM8Fy_c3kIlEPvMYso4nH1ZZVMo2aN-5uhWAhb0Vegk/edit?usp=sharing)
 
-[Link to the demonstration video](https://quaranteams-admin.herokuapp.com/#/login)
-
 [Link to the Psychologist / Staff / Admin Login Page](https://quaranteams-admin.herokuapp.com/#/login)
 
 [Link to The Users(Client) Login Page](https://quaranteams-main.herokuapp.com/login) 
