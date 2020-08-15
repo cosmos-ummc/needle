@@ -26,7 +26,7 @@
 
 [Link to the Backend Chat Service](https://github.com/cosmos-ummc/needle)
 
-[Link to the Telegram Chat Bot](https://github.com/cosmos-ummc/butterfly)
+[Link to the Telegram Chat Bot](https://github.com/cosmos-ummc/Willman)
 
 # Instructions
 
