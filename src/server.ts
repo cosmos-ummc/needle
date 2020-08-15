@@ -26,11 +26,11 @@ export class Server {
   private initialize(): void {
     this.app = express();
     this.pusher = new Pusher({
-      appId: "1044913",
-      cluster: "ap1",
+      appId: process.env.PUSHER_APP_ID,
+      cluster: process.env.PUSHER_CLUSTER,
       encrypted: true,
-      key: "ec07749c8ce28d32448a",
-      secret: "25382e1520d7be2efca8",
+      key: process.env.PUSHER_KEY,
+      secret: process.env.PUSHER_SECRET,
     });
 
     this.httpServer = createServer(this.app);
